@@ -1,15 +1,9 @@
-import twython as tw
-import json
-from linkedin_v2 import linkedin
-#token_twitter=tw.Twython()
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
 
-client_id="7879dvv96ek1sk"
-client_secret="4KC8s5TWnmedxBzN"
-host="http://localhost:8000"
+data=pd.read_csv("./Data Raw/bigml_59c28831336c6604c800002a.csv")
+data.head()
 
-
-authentication = linkedin.LinkedInAuthentication(client_id,client_secret,host,linkedin.PERMISSIONS.enums.values())
-print(authentication.AUTHORIZATION_URL)
-application = linkedin.LinkedInApplication(authentication)
-
-authentication.get_access_token()
+churn=data["churn"].value_counts()
+state=data["state"].value_counts()
