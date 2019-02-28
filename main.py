@@ -3,7 +3,19 @@ import matplotlib.pyplot as plt
 
 data=pd.read_csv("./Data Raw/bigml_59c28831336c6604c800002a.csv")
 data.dtypes
+data.isnull().sum()
 data.head()
+
+data["churn"].hist()
+
+table=pd.crosstab(index=data["state"],columns=data["churn"])
+table.plot(kind="bar")
+
+table=pd.crosstab(index=data["international plan"],columns=data["churn"])
+table.plot(kind="bar",stacked=True)
+
+table=pd.crosstab(index=data["voice mail plan"],columns=data["churn"])
+table.plot(kind="bar",stacked=True)
 
 table=pd.crosstab(index=data["state"],columns=data["churn"])
 df_table=pd.DataFrame(table)
@@ -28,3 +40,8 @@ data.dtypes
 
 data.drop(["phone number","area code"],axis=1,inplace=True)
 data.head()
+
+y=data["churn"]
+X=data.drop("churn",axis=1)
+
+ratio_churn=()
