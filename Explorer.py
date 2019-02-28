@@ -4,6 +4,7 @@ Author: Ricardo Arango Giraldo
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 data=pd.read_csv("./Data Raw/bigml_59c28831336c6604c800002a.csv")
 data.dtypes
@@ -54,3 +55,6 @@ data["customer service calls"].hist()
 
 data.drop(["phone number","area code"],axis=1,inplace=True)
 data.head()
+
+os.mkdir("./Data Tidy")
+data.to_csv("./Data Tidy/bigml_tidy.csv")
