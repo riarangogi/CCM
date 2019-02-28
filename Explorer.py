@@ -57,3 +57,4 @@ data.drop(["phone number","area code"],axis=1,inplace=True)
 data.head()
 
 os.mkdir("./Data Tidy")
+data.to_csv("./Data Tidy/bigml_tidy.csv")
