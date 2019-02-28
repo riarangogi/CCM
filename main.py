@@ -13,3 +13,6 @@ df_table.sort_values(by="prop customer",inplace=True)
 
 states=df_table.index
 state_dic={'state' : {state: i for state,i in zip(states,range(len(states)))}}
+
+data.replace(state_dic,inplace=True)
+data.head()
