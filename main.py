@@ -1,3 +1,7 @@
+""""
+Author: Ricardo Arango Giraldo
+"""
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
