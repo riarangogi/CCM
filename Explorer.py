@@ -11,7 +11,9 @@ data.dtypes
 data.isnull().sum()
 data.head()
 
-data["churn"].hist()
+churn_txt=data["churn"].astype(object)
+table=churn_txt.value_counts()
+table.plot(kind="bar")
 ratio_churn=()
 
 table=pd.crosstab(index=data["state"],columns=data["churn"])
@@ -57,4 +59,4 @@ data.drop(["phone number","area code"],axis=1,inplace=True)
 data.head()
 
 os.mkdir("./Data Tidy")
-data.to_csv("./Data Tidy/bigml_tidy.csv")
+data.to_csv("./Data Tidy/bigml_tidy.csv",index=False)
