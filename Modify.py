@@ -8,7 +8,7 @@ Python Version: Anaconda 3.6.8
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-
+from imblearn.over_sampling import SMOTE
 data=pd.read_csv("./Data Tidy/bigml_tidy.csv")
 data.head()
 
@@ -27,7 +27,7 @@ data.replace(state_dic,inplace=True)
 data.head()
 
 data["churn"]=data["churn"].astype(int)
-international_dic={"international plan":{"no":0,"yes":1}}   
+international_dic={"international plan":{"no":0,"yes":1}}
 data.replace(international_dic,inplace=True)
 mail_dic={"voice mail plan":{"no":0,"yes":1}}
 data.replace(mail_dic,inplace=True)
