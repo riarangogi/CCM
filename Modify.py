@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import SMOTE
+
 data=pd.read_csv("./Data Tidy/bigml_tidy.csv")
 data.head()
 
@@ -39,3 +40,5 @@ seed=np.random.seed(47)
 
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=seed)
 
+os=SMOTE(random_state=seed)
+os_X_train, os_y_train=os.fit_resample(X_train,y_train)
