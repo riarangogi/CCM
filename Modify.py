@@ -39,6 +39,12 @@ X=data.drop("churn",axis=1)
 seed=np.random.seed(47)
 
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=seed)
+columns=X_train.columns
 
 os=SMOTE(random_state=seed)
 os_X_train, os_y_train=os.fit_resample(X_train,y_train)
+os_X_train=pd.DataFrame(data=os_X_train,columns=columns)
+os_y_train=pd.DataFrame(data=os_y_train,columns=["y"])
+
+len(X_train), len(os_X_train)
+len(os_y_train[os_y_train["y"]==0]), len(os_y_train[os_y_train["y"]==1])
