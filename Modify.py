@@ -54,6 +54,9 @@ osre_y_train=pd.DataFrame(data=osre_y_train,columns=["y"])
 len(X_train), len(osre_X_train)
 len(osre_y_train[osre_y_train["y"]==0]), len(osre_y_train[osre_y_train["y"]==1])
 
-X_train_tree=X_train
+X_train_tree=X_train.copy()
 X_train_tree["state"]=X_train_tree["state"].astype("category")
-X_train.dtypes
+os_X_train_tree=os_X_train.copy()
+os_X_train_tree["state"]=os_X_train_tree["state"].astype("category")
+osre_X_train_tree=osre_X_train.copy()
+osre_X_train_tree["state"]=osre_X_train_tree["state"].astype("category")
