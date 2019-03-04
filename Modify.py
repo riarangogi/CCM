@@ -36,7 +36,7 @@ data.dtypes
 
 y=data["churn"]
 X=data.drop("churn",axis=1)
-seed=np.random.seed(47)
+np.random.seed(47)
 
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=seed)
 columns=X_train.columns
@@ -60,3 +60,7 @@ os_X_train_tree=os_X_train.copy()
 os_X_train_tree["state"]=os_X_train_tree["state"].astype("category")
 osre_X_train_tree=osre_X_train.copy()
 osre_X_train_tree["state"]=osre_X_train_tree["state"].astype("category")
+
+X_train_log=X_train.copy()
+os_X_train_log=os_X_train.copy()
+osre_X_train_log=osre_X_train.copy()
