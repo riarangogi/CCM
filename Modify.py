@@ -38,9 +38,9 @@ y=data["churn"]
 X=data.drop("churn",axis=1)
 np.random.seed(47)
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=seed)
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=47)
 columns=X_train.columns
-os=SMOTE(random_state=seed)
+os=SMOTE(random_state=47)
 
 os_X_train, os_y_train=os.fit_sample(X_train,y_train)
 os_X_train=pd.DataFrame(data=os_X_train,columns=columns)
