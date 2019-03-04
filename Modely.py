@@ -13,6 +13,6 @@ import graphviz as grp
 tree_gini=tree.DecisionTreeClassifier(criterion="gini",random_state=47,max_depth=3,min_samples_leaf=5)
 tree_gini=tree_gini.fit(X_train_tree,y_train)
 
-dot=tree.export_graphviz(tree_gini,out_file=None)
+dot=tree.export_graphviz(tree_gini,out_file=None,feature_names=columns)
 graph=grp.Source(dot)
 graph.render("Tree")
