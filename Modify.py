@@ -40,6 +40,7 @@ np.random.seed(47)
 
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=47)
 columns=X_train.columns
+dic_targets={0:"No",1:"Si"}
 os=SMOTE(random_state=47)
 
 os_X_train, os_y_train=os.fit_sample(X_train,y_train)
@@ -55,10 +56,19 @@ len(X_train), len(osre_X_train)
 len(osre_y_train[osre_y_train["y"]==0]), len(osre_y_train[osre_y_train["y"]==1])
 
 X_train_tree=X_train.copy()
+y_train_tree=y_train.copy()
+y_train_tree.replace(dic_targets,inplace=True)
+y_train_tree=y_train_tree.values
 X_train_tree["state"]=X_train_tree["state"].astype("category")
 os_X_train_tree=os_X_train.copy()
+os_y_train_tree=os_y_train["y"].copy()
+os_y_train_tree.replace(dic_targets,inplace=True)
+os_y_train_tree=os_y_train_tree.values
 os_X_train_tree["state"]=os_X_train_tree["state"].astype("category")
 osre_X_train_tree=osre_X_train.copy()
+osre_y_train_tree=osre_y_train["y"].copy()
+osre_y_train_tree.replace(dic_targets,inplace=True)
+osre_y_train_tree=osre_y_train_tree.values
 osre_X_train_tree["state"]=osre_X_train_tree["state"].astype("category")
 
 X_train_log=X_train.copy()
