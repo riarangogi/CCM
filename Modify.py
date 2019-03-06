@@ -72,5 +72,7 @@ osre_y_train_tree=osre_y_train_tree.values
 osre_X_train_tree["state"]=osre_X_train_tree["state"].astype("category")
 
 X_train_log=X_train.copy()
+y_train_log=y_train["y"].copy()
+y_train_log=y_train_log.values
 os_X_train_log=os_X_train.copy()
 osre_X_train_log=osre_X_train.copy()
