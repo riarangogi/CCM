@@ -30,3 +30,11 @@ osre_graph.render("osre_Tree")
 log=sm.Logit(y_train,X_train_log)
 result=log.fit()
 result.summary2()
+
+os_log=sm.Logit(os_y_train,os_X_train_log)
+os_result=os_log.fit()
+os_result.summary2()
+
+osre_log=sm.Logit(osre_y_train,osre_X_train_log)
+osre_result=osre_log.fit()
+ccresult.summary2()
