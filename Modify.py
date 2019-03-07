@@ -8,6 +8,8 @@ Python Version: Anaconda 3.6.8
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
+from sklearn.feature_selection import RFE
+from sklearn.linear_model import LogisticRegression
 from imblearn.over_sampling import SMOTE
 
 data=pd.read_csv("./Data Tidy/bigml_tidy.csv")
@@ -71,6 +73,11 @@ osre_y_train_tree.replace(dic_targets,inplace=True)
 osre_y_train_tree=osre_y_train_tree.values
 osre_X_train_tree["state"]=osre_X_train_tree["state"].astype("category")
 
+logreg=LogisticRegression(random_state=47)
+rfe=RFE(logreg,11)
+rfe=rfe.fit(X_train,y_train.values)
+sup=rfe.support_
+X_train.iloc[:,sup]
 X_train_log=X_train.copy()
 y_train_log=y_train.copy()
 y_train_log=y_train_log.values
