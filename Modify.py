@@ -86,6 +86,8 @@ os_rfe=rfe.fit(os_X_train,os_y_train_log)
 os_sup=os_rfe.support_
 os_X_train_log=os_X_train.iloc[:os_sup]
 
-osre_X_train_log=osre_X_train.copy()
 osre_y_train_log=osre_y_train["y"].copy()
 osre_y_train_log=osre_y_train_log.values
+osre_rfe=rfe.fit(osre_X_train,osre_y_train_log)
+osre_sup=osre_rfe.support_
+osre_X_train_log=osre_X_train.iloc[:osre_sup]
