@@ -26,7 +26,7 @@ osre_dot=tree.export_graphviz(osre_tree_gini,out_file=None,feature_names=columns
 osre_graph=grp.Source(osre_dot)
 osre_graph.render("osre_Tree")
 
-log=sm.Logit(y_train_log,X_train_log)
+log=sm.Logit(y_train.values,X_train_log)
 result=log.fit()
 result.summary2()
 
