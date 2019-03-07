@@ -75,15 +75,17 @@ osre_X_train_tree["state"]=osre_X_train_tree["state"].astype("category")
 
 logreg=LogisticRegression(random_state=47)
 rfe=RFE(logreg,11)
+
 rfe=rfe.fit(X_train,y_train.values)
 sup=rfe.support_
-X_train.iloc[:,sup]
-X_train_log=X_train.copy()
-y_train_log=y_train.copy()
-y_train_log=y_train_log.values
-os_X_train_log=os_X_train.copy()
+X_train_log=X_train.iloc[:,sup]
+
 os_y_train_log=os_y_train["y"].copy()
 os_y_train_log=os_y_train_log.values
+os_rfe=rfe.fit(os_X_train,os_y_train_log)
+os_sup=os_rfe.support_
+os_X_train_log=os_X_train.iloc[:os_sup]
+
 osre_X_train_log=osre_X_train.copy()
 osre_y_train_log=osre_y_train["y"].copy()
 osre_y_train_log=osre_y_train_log.values
