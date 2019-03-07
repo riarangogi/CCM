@@ -6,7 +6,6 @@ OS: elementary OS 5.0 Juno (64-bit), Basado en Ubuntu 18.04.2 LTS
 Python Version: Anaconda 3.6.8
 """
 
-from  sklearn.metrics import accuracy_score
 from sklearn import tree
 import graphviz as grp
 import statsmodels.api as sm
@@ -37,4 +36,4 @@ os_result.summary2()
 
 osre_log=sm.Logit(osre_y_train_log,osre_X_train_log)
 osre_result=osre_log.fit()
-ccresult.summary2()
+osre_result.summary2()
