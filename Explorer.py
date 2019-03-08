@@ -38,6 +38,9 @@ plt.savefig("prop_churn_inrternational")
 
 table=pd.crosstab(index=data["voice mail plan"],columns=data["churn"])
 table.plot(kind="bar",stacked=True)
+plt.title("Proporcion desercion en plan voz y datos")
+plt.ylabel("Clientes")
+plt.savefig("prop_churn_voice_mail")
 
 data["account length"].hist()
 
