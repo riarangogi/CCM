@@ -1,5 +1,9 @@
 """"
 Author: Ricardo Arango Giraldo
+Date: 26/Feb/2019
+Description: In  this script we explere the variabes that has the dataset
+OS: elementary OS 5.0 Juno (64-bit), Basado en Ubuntu 18.04.2 LTS
+Python Version: Anaconda 3.6.8
 """
 
 import pandas as pd
