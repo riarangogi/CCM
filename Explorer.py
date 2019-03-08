@@ -32,6 +32,9 @@ plt.savefig("count_churn_state")
 
 table=pd.crosstab(index=data["international plan"],columns=data["churn"])
 table.plot(kind="bar",stacked=True)
+plt.title("Proporcion desercion en plan internacional")
+plt.ylabel("Clientes")
+plt.savefig("prop_churn_inrternational")
 
 table=pd.crosstab(index=data["voice mail plan"],columns=data["churn"])
 table.plot(kind="bar",stacked=True)
