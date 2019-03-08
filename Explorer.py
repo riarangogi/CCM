@@ -25,6 +25,10 @@ ratio_churn=()
 
 table=pd.crosstab(index=data["state"],columns=data["churn"])
 table.plot(kind="bar")
+plt.title("Total desercion por estados")
+plt.ylabel("Clientes")
+plt.xlabel("Estados")
+plt.savefig("count_churn_state")
 
 table=pd.crosstab(index=data["international plan"],columns=data["churn"])
 table.plot(kind="bar",stacked=True)
