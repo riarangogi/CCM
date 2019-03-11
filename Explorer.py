@@ -72,11 +72,15 @@ axs[2].hist(data["total eve calls"])
 axs[2].set_xlabel( "Llamadas")
 fig.savefig("cha_eve")
 
-data["total night minutes"].hist()
-
-data["total night charge"].hist()
-
-data["total night calls"].hist()
+fig,axs=plt.subplots(1,3)
+fig.suptitle("Distribuciones comportamiento por la noche")
+axs[0].hist(data["total night minutes"])
+axs[0].set_xlabel("Minutos")
+axs[1].hist(data["total night charge"])
+axs[1].set_xlabel("Recargas")
+axs[2].hist(data["total night calls"])
+axs[2].set_xlabel( "Llamadas")
+fig.savefig("cha_night")
 
 data["total intl minutes"].hist()
 
