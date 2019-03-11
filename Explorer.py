@@ -52,11 +52,15 @@ plt.title("Distribucion numero de mensajes enviados")
 plt.xlabel("Cantidad de mensajes enviados")
 plt.savefig("hist_number_messages")
 
-data["total day minutes"].hist()
-
-data["total day charge"].hist()
-
-data["total day calls"].hist()
+fig,axs=plt.subplots(1,3)
+fig.suptitle("Distribuciones comportamiento por el dia")
+axs[0].hist(data["total day minutes"])
+axs[0].set_xlabel("Minutos")
+axs[1].hist(data["total day charge"])
+axs[1].set_xlabel("Recargas")
+axs[2].hist(data["total day calls"])
+axs[2].set_xlabel( "Llamadas")
+fig.savefig("cha_day")
 
 data["total eve minutes"].hist()
 
