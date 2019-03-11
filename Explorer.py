@@ -42,7 +42,10 @@ plt.title("Proporcion desercion en plan voz y datos")
 plt.ylabel("Clientes")
 plt.savefig("prop_churn_voice_mail")
 
-data["account length"].hist()
+plt.hist(data["account length"])
+plt.title("Distribucion tamanos de cuentas")
+plt.xlabel("Tamano de cuenta")
+plt.savefig("hist_account_length")
 
 data["number vmail messages"].hist()
 
