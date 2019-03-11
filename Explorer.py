@@ -47,7 +47,10 @@ plt.title("Distribucion tamanos de cuentas")
 plt.xlabel("Tamano de cuenta")
 plt.savefig("hist_account_length")
 
-data["number vmail messages"].hist()
+plt.hist(data["number vmail messages"])
+plt.title("Distribucion numero de mensajes enviados")
+plt.xlabel("Cantidad de mensajes enviados")
+plt.savefig("hist_number_messages")
 
 data["total day minutes"].hist()
 
