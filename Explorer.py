@@ -76,7 +76,10 @@ data["total intl charge"].hist()
 
 data["total intl calls"].hist()
 
-data["customer service calls"].hist()
+plt.hist(data["customer service calls"])
+plt.title("Distribucion numero de llamadas servicio al cliente")
+plt.xlabel("Cantidad de llamadas")
+plt.savefig("hist_customer_calls")
 
 data.drop(["phone number","area code"],axis=1,inplace=True)
 data.head()
