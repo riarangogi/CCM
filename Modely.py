@@ -11,7 +11,8 @@ import graphviz as grp
 import statsmodels.api as sm
 from sklearn.linear_model import LogisticRegression
 
-tree_gini=tree.DecisionTreeClassifier(criterion="gini",random_state=47,max_depth=3,min_samples_leaf=5)
+tree_gini=tree.DecisionTreeClassifier(criterion="gini",random_state=47,
+    max_depth=5,min_samples_split=20,min_samples_leaf=10)
 tree_gini=tree_gini.fit(X_train_tree,y_train_tree)
 os_tree_gini=tree_gini.fit(os_X_train_tree,os_y_train_tree)
 osre_tree_gini=tree_gini.fit(osre_X_train_tree,osre_y_train_tree)
