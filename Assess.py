@@ -24,3 +24,11 @@ rep_os_tree=classification_report(y_tree_test,y_os_tree_pred)
 acc_os_tree
 mat_os_tree
 rep_os_tree
+
+y_osre_tree_pred=osre_tree_gini.predict(X_test_tree)
+acc_osre_tree=accuracy_score(y_tree_test,y_osre_tree_pred)
+mat_osre_tree=confusion_matrix(y_tree_test,y_osre_tree_pred)
+rep_osre_tree=classification_report(y_tree_test,y_osre_tree_pred)
+acc_osre_tree
+mat_osre_tree
+rep_osre_tree
