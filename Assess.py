@@ -11,5 +11,9 @@ from sklearn.metrics import accuracy_score
 
 y_tree_pred=tree_gini.predict(X_test_tree)
 
+acc_tree=accuracy_score(y_tree_test,y_tree_pred)
 mat_tree=confusion_matrix(y_tree_test,y_tree_pred)
 rep_tree=classification_report(y_tree_test,y_tree_pred)
+acc_tree
+mat_tree
+rep_tree
