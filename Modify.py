@@ -40,7 +40,8 @@ y=data["churn"]
 X=data.drop("churn",axis=1)
 np.random.seed(47)
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=47)
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,
+    random_state=47)
 columns=X_train.columns
 dic_targets={0:"No",1:"Si"}
 os=SMOTE(random_state=47)
