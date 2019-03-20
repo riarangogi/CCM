@@ -17,13 +17,16 @@ tree_gini=tree.fit(X_train_tree,y_train_tree)
 os_tree_gini=tree.fit(os_X_train_tree,os_y_train_tree)
 osre_tree_gini=tree.fit(osre_X_train_tree,osre_y_train_tree)
 
-dot=tree.export_graphviz(tree_gini,out_file=None,feature_names=columns,class_names=["No","Si"])
+dot=tree.export_graphviz(tree_gini,out_file=None,feature_names=columns,
+    class_names=["No","Si"])
 graph=grp.Source(dot)
 graph.render("Tree")
-os_dot=tree.export_graphviz(os_tree_gini,out_file=None,feature_names=columns,class_names=["No","Si"])
+os_dot=tree.export_graphviz(os_tree_gini,out_file=None,feature_names=columns,
+    class_names=["No","Si"])
 os_graph=grp.Source(os_dot)
 os_graph.render("os_Tree")
-osre_dot=tree.export_graphviz(osre_tree_gini,out_file=None,feature_names=columns,class_names=["No","Si"])
+osre_dot=tree.export_graphviz(osre_tree_gini,out_file=None,feature_names=columns,
+    class_names=["No","Si"])
 osre_graph=grp.Source(osre_dot)
 osre_graph.render("osre_Tree")
 
